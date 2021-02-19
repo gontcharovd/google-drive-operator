@@ -1,6 +1,6 @@
 from datetime import datetime
 from airflow.models.dag import DAG
-from airflow.providers.bash import BashOperator
+from airflow.operators.bash import BashOperator
 
 from google_drive_operator import GoogleDriveOperator
 
@@ -14,7 +14,10 @@ dag = DAG(
 
 create_file = BashOperator(
     task_id='create_file',
-    bash_command='echo {{ ds }} >> /tmp/my_file_{{ ds }}.txt',
+    bash_command=(
+        'echo file created on {{ ds }}. > '
+        '${AIRFLOW_HOME}/tmp/my_file_{{ ds }}.txt'
+    ),
     dag=dag
 )
 
