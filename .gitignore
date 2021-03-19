@@ -2,3 +2,5 @@ tags
 env/
 logs/
 tmp/
+docker/airflow-to-drive-308020-f4e5a3186f4d.json
+postgresql

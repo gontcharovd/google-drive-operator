@@ -23,9 +23,9 @@ create_file = BashOperator(
 
 upload_file = GoogleDriveOperator(
     task_id='upload_file',
-    local_path='/tmp/my_file_{{ ds }}.txt',
-    drive_folder='/some_project/airflow_upload',
-    gcp_conn_id='my_google_drive',
+    local_path='tmp/my_file_{{ ds }}.txt',
+    drive_folder='google-drive-operator',
+    gcp_conn_id='airflow-to-drive',
     delegate_to='denis@gontcharov.be',
 )
 
