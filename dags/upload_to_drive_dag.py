@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from datetime import datetime
 from airflow.models.dag import DAG
 from airflow.operators.bash import BashOperator
